@@ -1,6 +1,6 @@
 from model.bd import DB
 
-class ContinentModel():
+class utilisateurModel():
     def __init__(self) -> None:
         self.conn=DB.connect()
     
