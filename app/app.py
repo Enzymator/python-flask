@@ -1,6 +1,6 @@
 from flask import Flask
 from flask.templating import render_template
-from model.utilisateurModel import ContinentModel
+from model.utilisateurModel import utilisateurModel
 from werkzeug.utils import redirect
 
 app=Flask(__name__)
