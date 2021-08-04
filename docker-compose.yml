@@ -8,12 +8,11 @@ services:
     
     ma-bdd.com:
         image: mysql:8.0.26
-        container_name: some_mysql
+        container_name: some_mysql1
         restart: unless-stopped
         environment: 
             MYSQL_ROOT_PASSWORD: root
         volumes:
-            - db-data:/var/lib/mysql/
             - ./db-init/:/docker-entrypoint-initdb.d
 
     adminer-pour-ma-bdd:
@@ -23,6 +22,3 @@ services:
             - 8000:8080
         depends_on:
             - ma-bdd.com
-
-    volumes:
-        db-data:
