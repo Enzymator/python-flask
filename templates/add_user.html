@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+
+    <form action="http://localhost:5000/insert_user" method="post">
+        <label> id : 
+            <input type="text" name="id">
+        </label>
+        <br/><br/>
+        <label> nom de l'utilisateur : 
+            <input type="text" name="nom">
+        </label><br/><br/>
+        <label> prénom de l'utilisateur : 
+            <input type="text" name="prenom">
+        </label><br/><br/>
+        <input type="submit" value="Envoyer">
+    </form>
+    <br/>
+    <a href="http://localhost:5000/"> Retour à la page précdente</a>
+    {% endblock %}
+</body>
+</html>

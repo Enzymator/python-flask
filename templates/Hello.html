@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu utilisateur</title>
+</head>
+<body>
+    {% block title %}
+    <title>Hello</title>
+    {% endblock %}
+
+    {% block content %}
+
+    <ul>
+        {% for i in data %}
+        <li>
+            {{ i.nom }} 
+            <br/><a href="http://localhost:5000/delete_user/{{i.id_continent}}"> Supprimer cet utilisateur</a>
+            <br/><a href="http://localhost:5000/update_user?id={{i.id}}&nom={{i.nom}}"> Modifier cet utilisateur</a><br/>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="http://localhost:5000/bye"> lien vers bye </a><br/>
+    <a href="http://localhost:5000/add_user"> Ajout d'utilisateur</a><br/>
+
+    {% endblock %}
+</body>
+</html>

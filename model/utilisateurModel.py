@@ -1,29 +1,29 @@
 from model.bd import DB
 
-class utilisateurModel():
+class UtilisateurModel():
     def __init__(self) -> None:
         self.conn=DB.connect()
     
-    def fetch_all_continent(self):
+    def fetch_all_utilisateur(self):
         self.conn.execute(
-            """ SELECT id_continent, nom_continent FROM continent """)
+            """ SELECT id, nom, prenom FROM utilisateur """)
         rows=self.conn.fetchall()
         return rows
     
     def deleteById(self, id):
-        # requête permettant la suppression d'un continent
+        # requête permettant la suppression d'un utilisateur
         self.conn.execute(
-            f""" DELETE FROM continent WHERE id_continent = {int(id)} """
+            f""" DELETE FROM utilisateur WHERE id = {int(id)} """
         )
     
-    def addContinent(self, data):
-        # requête permettant l'ajout d'un continent
+    def addUser(self, data):
+        # requête permettant l'ajout d'un utilisateur
         self.conn.execute(
-            f"""INSERT INTO continent(id_continent, nom_continent) VALUES('{int(data.get('id'))}', '{data.get('nom')}')"""
+            f"""INSERT INTO utilisateur(id, nom, prenom) VALUES('{int(data.get('id'))}', '{data.get('nom')}', '{data.get('prenom')}')"""
         )
     
     def update(self, data):
         # méthode permettant la mise à jour d'un continent
         self.conn.execute(
-            f""" UPDATE continent SET nom_continent = '{data.get('nom')}' WHERE id_continent = '{int(data.get('id'))}' """
+            f""" UPDATE utilisateur SET nom = '{data.get('nom')}', prenom = '{data.get('prenom')}' WHERE id = '{int(data.get('id'))}' """
         )
