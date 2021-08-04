@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+    flask:
+        build: ./app
+        ports:
+            - 5000:5000
+    
+    ma-bdd.com:
+        image: mysql:8.0.26
+        container_name: some_mysql
+        restart: unless-stopped
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - db-data:/var/lib/mysql/
+
+    adminer-pour-ma-bdd:
+        image: adminer:4.8.1
+        restart: unless-stopped
+        ports:
+            - 8080:8080
+        depends_on:
+            - ma-bdd.com
+
+    volumes:
+        db-data:
