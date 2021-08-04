@@ -7,7 +7,7 @@ class DB(ABC):
         host="localhost",
         user="root",
         password="root",
-        database="beer",
+        database="mabdd",
         port=3306
     )
 
