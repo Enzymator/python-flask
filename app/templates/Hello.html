@@ -16,9 +16,9 @@
     <ul>
         {% for i in data %}
         <li>
-            {{ i.nom }} 
+            {{ i.nom }} {{i.prenom}} 
             <br/><a href="http://localhost:5000/delete_user/{{i.id_continent}}"> Supprimer cet utilisateur</a>
-            <br/><a href="http://localhost:5000/update_user?id={{i.id}}&nom={{i.nom}}"> Modifier cet utilisateur</a><br/>
+            <br/><a href="http://localhost:5000/update_user?id={{i.id}}&nom={{i.nom}}&prenom={{i.prenom}}"> Modifier cet utilisateur</a><br/>
         </li>
         {% endfor %}
     </ul>
