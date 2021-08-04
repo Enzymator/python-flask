@@ -1,4 +1,4 @@
-from model.bd import DB
+from model.db import DB
 
 class UtilisateurModel():
     def __init__(self) -> None:
