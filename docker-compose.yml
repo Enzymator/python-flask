@@ -5,6 +5,8 @@ services:
         build: ./app/
         ports:
             - 5000:5000
+        links:
+            - ma-bdd.com
         networks:
             - mySQL_db
     

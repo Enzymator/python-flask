@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask.templating import render_template
-from model.utilisateurModel import utilisateurModel
+from model.utilisateurModel import UtilisateurModel
 from werkzeug.utils import redirect
 
 app=Flask(__name__)
