@@ -1,5 +1,4 @@
-DROP SCHEMA IF EXISTS mabdd;
-CREATE SCHEMA mabdd;
+CREATE SCHEMA IF NOT EXISTS mabdd;
 USE mabdd;
 
 CREATE TABLE utilisateur (
