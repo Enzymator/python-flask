@@ -4,6 +4,11 @@ from model.utilisateurModel import utilisateurModel
 from werkzeug.utils import redirect
 
 app=Flask(__name__)
+app.config['MYSQL_HOST']='127.0.0.1:3306'
+app.config['MYSQL_USER']='root'
+app.config['MYSQL_PASSWORD']='root'
+app.config['MYSQL_DB']='mabdd'
+
 utilisateur=UtilisateurModel()
 
 @app.route("/")

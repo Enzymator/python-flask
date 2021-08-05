@@ -4,11 +4,10 @@ from mysql.connector.errors import custom_error_exception
 
 class DB(ABC):
     conn=mysql.connector.connect(
-        host="127.0.0.1",
+        host="127.0.0.1:3306",
         user="root",
         password="root",
         database="mabdd",
-        port=3306
     )
 
     @staticmethod

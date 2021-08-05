@@ -4,6 +4,6 @@ WORKDIR /usr/src/app
 
 RUN pip install flask mysql-connector-python
 
-COPY ./app/ ./
+COPY ./ ./
 
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["python", "-m", "flask", "run"]

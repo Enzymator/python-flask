@@ -29,5 +29,5 @@ services:
         networks:
             - mySQL_db
 
-    networks:
-        mysql_db:
+networks:
+    mySQL_db:
