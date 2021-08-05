@@ -10,7 +10,7 @@
 </head>
 <body>
     {% block content %}
-    <form action="http://localhost:5000/update_user_t/" method="post"> 
+    <form action="http://127.0.0.1:5000/update_user_t/" method="post"> 
         <input type="hidden" name="id" value="{{data.get('id')}}" >
         <label> nom de l'utilisateur : 
             <input type="text" name="nom" value="{{data.get('nom')}}">
@@ -21,7 +21,7 @@
         <input type="submit" value="Envoyer">
     </form>
     <br/>
-    <a href="http://localhost:5000/"> retour à la page précdente</a>
+    <a href="http://127.0.0.1:5000/"> retour à la page précdente</a>
     {% endblock %}
 </body>
 </html>

@@ -24,12 +24,12 @@ def add_user():
 def user_continent():
     data=request.form
     utilisateur.addUser(data)
-    return redirect("http://localhost:5000")
+    return redirect("http://127.0.0.1:5000")
 
 @app.route("/delete_user/<id>")
 def delete_user(id):
     utilisateur.deleteById(id)
-    return redirect("http://localhost:5000")
+    return redirect("http://127.0.0.1:5000")
 
 @app.route("/update_user/")
 def update_user():
@@ -40,4 +40,4 @@ def update_user():
 def update_user_t():
     data=request.form
     utilisateur.update(data)
-    return redirect("http://localhost:5000")
+    return redirect("http://127.0.0.1:5000")
