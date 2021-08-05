@@ -5,6 +5,8 @@ services:
         build: ./app/
         ports:
             - 5000:5000
+        networks:
+            - mySQL_db
     
     ma-bdd.com:
         image: mysql:8.0.26
@@ -14,6 +16,8 @@ services:
             MYSQL_ROOT_PASSWORD: root
         volumes:
             - ./db-init/:/docker-entrypoint-initdb.d
+        networks:
+            - mySQL_db
 
     adminer-pour-ma-bdd:
         image: adminer:4.8.1
@@ -22,3 +26,8 @@ services:
             - 8000:8080
         depends_on:
             - ma-bdd.com
+        networks:
+            - mySQL_db
+
+    networks:
+        mysql_db:

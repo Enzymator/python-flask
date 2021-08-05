@@ -1,11 +1,11 @@
+DROP SCHEMA IF EXISTS mabdd;
 CREATE SCHEMA mabdd;
-
 USE mabdd;
 
 CREATE TABLE utilisateur (
     id INT PRIMARY KEY,
     nom VARCHAR(30) NOT NULL,
-    prenom VARCHAR(30) NOT NULL,
+    prenom VARCHAR(30) NOT NULL
 );
 
 INSERT INTO utilisateur VALUES('1','Machin','Martin');
