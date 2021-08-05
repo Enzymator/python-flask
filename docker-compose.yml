@@ -2,16 +2,15 @@ version: '3.7'
 
 services:
     flask:
-        build: ./src/app
+        build: ./app
         restart: unless-stopped
         ports:
             - 5000:5000
         links:
-            - ma-bdd.com
+            - db
     
-    ma-bdd.com:
+    db:
         image: mysql:8.0.26
-        container_name: db
         restart: unless-stopped
         ports:
             - 3307:3306
@@ -26,4 +25,4 @@ services:
         ports:
             - 8000:8080
         depends_on:
-            - ma-bdd.com
+            - db

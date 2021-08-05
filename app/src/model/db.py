@@ -4,7 +4,7 @@ from mysql.connector.errors import custom_error_exception
 
 class DB(ABC):
     conn=mysql.connector.connect(
-        host="ma-bdd.com",
+        host="db",
         user="root",
         password="root",
         database="mabdd",
