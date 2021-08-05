@@ -2,8 +2,10 @@ FROM python
 
 WORKDIR /app
 
-RUN pip install flask mysql-connector-python
+RUN pip install -r flask 
+RUN pip install -r mysql-connector-python
 
-COPY app.py /app
+COPY . /app
+EXPOSE 5000
 
 CMD ["python", "-m", "flask", "run"]

@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     flask:
-        build: ./app/
+        build: ./app
         ports:
             - 5000:5000
         links:
@@ -14,6 +14,8 @@ services:
         image: mysql:8.0.26
         container_name: some_mysql1
         restart: unless-stopped
+        ports:
+            - 3307:3306
         environment: 
             MYSQL_ROOT_PASSWORD: root
         volumes:
